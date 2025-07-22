@@ -20,7 +20,7 @@ function App() {
   <Route path='ultimos-lanzamientos' element={<UltimosLanzamientos/>}/>
   <Route path='/mejores-puntuadas' element={<MejoresPuntuadas/>}/>
   <Route path='/favoritos' element={<Favoritos/>} />
-  <Route path='/peliculas/:id' element={<DetallePelicula/>}/>
+  <Route path='/pelicula/:id' element={<DetallePelicula/>}/>
 
 
 
