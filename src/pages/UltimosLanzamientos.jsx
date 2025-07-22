@@ -1,6 +1,6 @@
 import React from "react";
 import { useMovies } from "../context/MovieContext";
-import{Typography, Grid, Card,CardMedia,                 </Card>
+import{Typography, Grid, Card,CardMedia,                
 } from "@mui/material"
 import { Link } from "react-router-dom";
 
