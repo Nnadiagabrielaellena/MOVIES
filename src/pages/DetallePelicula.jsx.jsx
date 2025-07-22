@@ -28,9 +28,48 @@ export default function DetallePelicula() {
                   }
             }
             fetchPelicula()
-      },[id])
+      }, [id])
+      if (!pelicula) return <p>Cargando detalles..</p>
+
+      return (
+            <Container>
+                  <Card>
+                        <CardMedia
+                              component="img"
+                              height="500"
+                              image={`https://image.tmdb.org/t/p/original${pelicula.backdrop_path}`}
+                              alt={pelicula.title}
+                        />
+
+                        <CardContex>
+                              <Typography variant="h4" gutterBottom>
+                                    {pelicula.title}
+                              </Typography>
+                              <Typography variant="body1" sx={{ mt: 2 }}>
+                                    {pelicula.overview}
+                              </Typography>
+                              <Typography variant="body2" sx={{ mt: 2 }}>
+                                    Fecha de estreno: {pelicula.release_date}
+                              </Typography>
+                              <Typography variant="body2">
+                                    Puntuación: {pelicula.vote_average}
+                              </Typography>
+                        </CardContex>
 
 
+                  </Card>
+                  <Button variant="contained" sx={{ mt: 3 }} href="/">
+                        Volver al Inicio
+                  </Button>
+
+
+
+
+
+
+
+            </Container>
+      )
 
 
 
