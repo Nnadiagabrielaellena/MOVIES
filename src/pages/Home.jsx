@@ -1,34 +1,44 @@
 import React from "react";
-import { useMovies } from "../context/MovieContext"
-import CarruselBanner from "../components/CarruselBanner"
-import { CircularProgress } from "@mui/material";
-import { Box, Grid } from "@mui/system";
-
-
+import { useMovies } from "../context/MovieContext";
+import CarruselBanner from "../components/CarruselBanner";
+import {
+  Typography,
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  CircularProgress,
+  Box,
+  IconButton,
+} from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { Link } from "react-router-dom";
 
 export default function Home() {
-      const {
-            populares,
-            mejoresPuntuadas,
-            cargando,
-            toggleFavorito,
-            esFavorito,
-      } = useMovies();
+  const {
+    populares,
+    mejoresPuntuadas,
+    cargando,
+    toggleFavorito,
+    esFavorito, 
+  } = useMovies();
 
-      if (cargando)
-            return (
-                  <Box texAlign="center" mt={5}>
-                        <CircularProgress />
-                  </Box>
-            )
-      return (
-            < Box p={3} >
-                 {}
+  if (cargando)
+    return (
+      <Box textAlign="center" mt={5}>
+        <CircularProgress />
+      </Box>
+    );
+
+  return (
+    <Box p={3}>
+      {}
       <CarruselBanner peliculas={populares.slice(0, 5)} />
 
-      
+      {/* Grilla con dos columnas: Populares y Mejores Puntuadas */}
       <Grid container spacing={4} mt={4}>
-        
+        {/* Películas Populares */}
         <Grid item xs={12} md={6}>
           <Typography variant="h5" gutterBottom textAlign="center">
             🎬 Populares
@@ -51,7 +61,7 @@ export default function Home() {
                       <Box display="flex" justifyContent="center">
                         <IconButton
                           onClick={(e) => {
-                            e.preventDefault(); 
+                            e.preventDefault(); // Evita redirigir al hacer clic en el corazón
                             toggleFavorito(peli);
                           }}
                         >
@@ -112,13 +122,6 @@ export default function Home() {
           </Grid>
         </Grid>
       </Grid>
-
-                  
-
-
-
-            </Box >
-      );
-
-
+    </Box>
+  );
 }
