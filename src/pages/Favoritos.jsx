@@ -35,8 +35,8 @@ export default function Favoritos(){
                           <Box display="flex" justifyContent="center">
                             <IconButton
                               onClick={(e) => {
-                                e.preventDefault(); // Evita redireccionar al hacer clic
-                                toggleFavorito(peli); // Permite quitar de favoritos
+                                e.preventDefault(); 
+                                toggleFavorito(peli); 
                               }}
                             >
                               <FavoriteIcon color="error" />

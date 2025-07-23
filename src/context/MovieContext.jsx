@@ -14,7 +14,7 @@ export const MovieProvider = ({ children }) => {
   
   const [favoritos, setFavoritos] = useState([]);
 
-  //  función para alternar favorito
+
   const toggleFavorito = (pelicula) => {
     setFavoritos((prev) => {
       const yaEsta = prev.find((p) => p.id === pelicula.id);
